@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Login</h2>
+    <div class="card-text">
+      <form #loginform = "ngForm" (ngSubmit) = "login(loginform)">
+        <div *ngIf="errors.length>0" class="alert alert-danger" id="errors">
+          <ul *ngFor="let error of errors">
+            <li>{{error}}</li>
+          </ul>
+        </div>
+        <div class="form-group">
+          User:
+          <input name="username" [(ngModel)] = "user.username" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          Password:
+          <input name="password" [(ngModel)] = "user.password" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
